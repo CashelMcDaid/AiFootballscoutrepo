@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "scout",
+      "password": "scout123",
+      "role": "scout"
+    },
+    {
+      "id": 2,
+      "username": "viewer",
+      "password": "viewer123",
+      "role": "viewer"
+    }
+  ],
+  "bookmarks": [
+    {
+      "userId": 1,
+      "playerId": "22090"
+    },
+    {
+      "userId": 1,
+      "playerId": "William Saliba-Arsenal-csv"
+    }
+  ],
+  "notes": [
+    {
+      "userId": 1,
+      "playerId": "22090",
+      "note": "Aerial win rate good but also his positioning makes it so he doesnt have too get them as much which is good"
+    }
+  ],
+  "scout": {
+    "favourites": [
+      "290",
+      "286616",
+      "18911"
+    ],
+    "notes": {
+      "253": "",
+      "290": "Great positionally",
+      "116117": ""
+    }
+  }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Football Scout</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>AI Football Scout</h1>
+
+  <div id="loginBar">
+    <form id="loginForm" style="display:inline;">
+      <span>Login:</span>
+      <input id="loginUsername" type="text" placeholder="username" />
+      <input id="loginPassword" type="password" placeholder="password" />
+      <button id="loginButton" type="submit">Login</button>
+      <button id="registerButton" type="button">Register</button>
+      <span id="loginStatus">Not logged in</span>
+    </form>
+    <button id="logoutBtn" style="display:none;">Logout</button>
+  </div>
+
+  <div id="tabBar">
+    <button class="tab-btn active" data-tab="playersTab">Players</button>
+    <button class="tab-btn" data-tab="standingsTab">Standings</button>
+    <button class="tab-btn" data-tab="scoutTab">AI Scout</button>    <button class="tab-btn" data-tab="adminTab" id="adminTabButton" style="display:none;">Admin</button>
+  </div>
+
+  <section id="playersTab" class="tab-panel active">
+    <div id="controls">
+      <div class="control-row">
+        <label>League:</label>
+        <select id="leagueSelect"></select>
+
+        <label style="margin-left:20px;">Target role:</label>
+        <select id="roleSelect">
+          <option value="Any">Any</option>
+          <option value="GK">GK</option>
+          <option value="CB">CB</option>
+          <option value="FB">FB</option>
+          <option value="DM">DM</option>
+          <option value="CM">CM</option>
+          <option value="AM">AM</option>
+          <option value="Winger">Winger</option>
+          <option value="ST">ST</option>
+        </select>
+
+        <label style="margin-left:20px;">View:</label>
+        <button id="viewAllBtn" type="button">All Players</button>
+        <button id="viewFavBtn" type="button">Favourites</button>
+      </div>
+
+      <div class="control-row">
+        <label>Defensive weighting:</label>
+        <input id="defenceSlider" type="range" min="0" max="100" value="50" />
+        <span id="defenceValue">50%</span>
+      </div>
+    </div>
+
+    <div id="playersView">
+      <table id="playersTable">
+        <thead>
+          <tr>
+            <th data-sort="name">Player</th>
+            <th data-sort="team">Team</th>
+            <th data-sort="leagueName">League</th>
+            <th data-sort="detailedPosition">Pos</th>
+            <th data-sort="age">Age</th>
+            <th data-sort="heightCm">Height</th>
+            <th data-sort="finishingScore">Finishing</th>
+            <th data-sort="passingScore">Passing</th>
+            <th data-sort="headerScore">Heading</th>
+            <th data-sort="interceptionsScore">Interceptions</th>
+            <th data-sort="overallScore">Overall</th>
+            <th>Fav</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="playerTable"></tbody>
+      </table>
+      <div id="noDataMessage" style="display:none;">No matching players.</div>
+    </div>
+  </section>
+
+  <section id="standingsTab" class="tab-panel">
+    <div class="section-head">
+      <h3>League Tables</h3>
+      <select id="standingsLeagueSelect"></select>
+    </div>
+    <table id="standingsTable">
+      <thead>
+        <tr>
+          <th>Pos</th>
+          <th>Team</th>
+          <th>P</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GF</th>
+          <th>GA</th>
+          <th>GD</th>
+          <th>Pts</th>
+          <th>Form</th>
+        </tr>
+      </thead>
+      <tbody id="standingsBody"></tbody>
+    </table>
+  </section>
+
+  <section id="scoutTab" class="tab-panel">
+    <div class="section-head">
+      <h3>AI Scout</h3>
+    </div>
+    <div id="weeklySuggestionBox" class="panel-box"></div>
+    <div id="scoutSuggestionList" class="suggestion-list"></div>
+  </section>
+
+  <section id="adminTab" class="tab-panel">
+    <div class="section-head">
+      <h3>Admin</h3>
+      <button id="refreshDataBtn" type="button">Refresh Data</button>
+    </div>
+    <div id="adminSummary" class="panel-box"></div>
+  </section>
+
+  <div id="playerCardModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <button id="closePlayerCard" class="close-btn" type="button">Close</button>
+      <div class="player-card-layout">
+        <div class="player-card-top">
+          <div class="player-image-wrap">
+            <img id="playerCardImage" src="/images/placeholder-player.svg" alt="Player image" />
+          </div>
+          <div class="player-main-info">
+            <h2 id="playerCardName">Player</h2>
+            <div class="card-meta-grid">
+              <div><span class="meta-label">Team</span><span id="playerCardTeam"></span></div>
+              <div><span class="meta-label">League</span><span id="playerCardLeague"></span></div>
+              <div><span class="meta-label">Position</span><span id="playerCardPosition"></span></div>
+              <div><span class="meta-label">Age</span><span id="playerCardAge"></span></div>
+              <div><span class="meta-label">Height</span><span id="playerCardHeight"></span></div>
+              <div><span class="meta-label">Nationality</span><span id="playerCardNationality"></span></div>
+              <div><span class="meta-label">Appearances</span><span id="playerCardApps"></span></div>
+              <div><span class="meta-label">Team Standing</span><span id="playerCardStanding"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="player-card-bottom">
+          <div class="stat-box"><span class="meta-label">Heading %</span><strong id="cardHeadingPct"></strong></div>
+          <div class="stat-box"><span class="meta-label">Pass Accuracy</span><strong id="cardPassingPct"></strong></div>
+          <div class="stat-box"><span class="meta-label">Shot Conversion</span><strong id="cardConversionPct"></strong></div>
+          <div class="stat-box"><span class="meta-label">Interceptions / Game</span><strong id="cardInterceptionsGame"></strong></div>
+          <div class="stat-box"><span class="meta-label">Goals</span><strong id="cardGoals"></strong></div>
+          <div class="stat-box"><span class="meta-label">Shots</span><strong id="cardShots"></strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="playerCard.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

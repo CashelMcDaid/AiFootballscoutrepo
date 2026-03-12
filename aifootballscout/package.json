@@ -1,0 +1,21 @@
+{
+  "name": "ca2",
+  "version": "1.0.0",
+  "description": "AI Football Scout - Proof of Concept (API-Football)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Cashel Mc Daid",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "express-session": "^1.18.2",
+    "node-fetch": "^3.3.2",
+    "sqlite3": "^5.1.7"
+  }
+}
