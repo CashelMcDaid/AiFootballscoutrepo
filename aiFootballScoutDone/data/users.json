@@ -1,0 +1,17 @@
+[
+  {
+    "username": "admin",
+    "role": "admin",
+    "passwordHash": "$2a$12$yek0msI8Ds1LU37Q3hwHTOazmdHFdqwiq5Qes4wdggyCcUeZgMAhq"
+  },
+  {
+    "username": "scout",
+    "role": "scout",
+    "passwordHash": "$2a$12$X4asJmo7GHk.JFMvYmbfL.CKd7pBtlcuOUcyPXuAgdqpCW5NlEiVC"
+  },
+  {
+    "username": "user",
+    "role": "user",
+    "passwordHash": "$2a$12$A8IkxN9NT4p3gE7LC/3mPutumG6YvNbuGupLzO07yZZZhhfcH7v0."
+  }
+]
