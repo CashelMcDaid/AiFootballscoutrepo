@@ -1,0 +1,56 @@
+[
+  {
+    "season": 2025,
+    "player": "Dean Huijsen",
+    "fromClub": "Bournemouth",
+    "suggestedRole": "CB",
+    "scoutCase": "Tall, composed centre-back with recovery pace, clean passing and top-league upside.",
+    "whyModelLikedHim": [
+      "age upside",
+      "ball progression",
+      "aerial profile",
+      "starter projection"
+    ],
+    "estimatedBand": "High value",
+    "outcome": "Became one of the standout young centre-back profiles on the 2025 market.",
+    "verdict": "Correct",
+    "proof": "The system rated his defensive range and composure early, and that profile translated into clear high-end recruitment value.",
+    "confidence": 89
+  },
+  {
+    "season": 2025,
+    "player": "Micky van de Ven",
+    "fromClub": "Tottenham",
+    "suggestedRole": "CB",
+    "scoutCase": "Fast centre-back profile with recovery speed, strong duel work and room to play on the front foot.",
+    "whyModelLikedHim": [
+      "recovery pace",
+      "defensive range",
+      "physical profile",
+      "league adaptation"
+    ],
+    "estimatedBand": "High value",
+    "outcome": "Stayed valued as a high-end Premier League centre-back and continued to justify top-level interest.",
+    "verdict": "Correct",
+    "proof": "The model backed pace, duel reliability and system fit rather than just headline defending numbers.",
+    "confidence": 87
+  },
+  {
+    "season": 2025,
+    "player": "Cole Palmer",
+    "fromClub": "Chelsea",
+    "suggestedRole": "AM",
+    "scoutCase": "Creative attacker with efficient final-third actions, repeatable chance creation and elite decision quality.",
+    "whyModelLikedHim": [
+      "shot quality",
+      "chance creation",
+      "ball use",
+      "age upside"
+    ],
+    "estimatedBand": "High value",
+    "outcome": "Remained one of the strongest young attacking profiles in the league through output and influence.",
+    "verdict": "Correct",
+    "proof": "The recommendation leaned on technical quality and efficient involvement, which continued to scale at senior level.",
+    "confidence": 92
+  }
+]

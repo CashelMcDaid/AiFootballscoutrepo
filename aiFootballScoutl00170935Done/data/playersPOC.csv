@@ -1,0 +1,11 @@
+name,team,position,role,heightCm,shots,goals,expectedGoalsDifference,aerialDuelsWon,aerialDuelsLost,interceptions
+Erling Haaland,Manchester City,ST,attacker,195,140,36,7,30,25,8
+Harry Kane,Bayern Munich,ST,attacker,188,130,30,5,40,30,5
+Bukayo Saka,Arsenal,RW,attacker,178,90,16,3,10,8,12
+Cole Palmer,Chelsea,RW,attacker,189,80,15,4,6,4,10
+Rodri,Manchester City,DM,midfielder,191,45,8,2,45,30,60
+Declan Rice,Arsenal,DM,midfielder,188,35,7,1,35,25,70
+John Stones,Manchester City,CB,defender,188,20,3,0,55,35,80
+William Saliba,Arsenal,CB,defender,192,15,2,0,60,30,75
+Alisson Becker,Liverpool,GK,goalkeeper,191,0,0,0,10,5,50
+Ederson Moraes,Manchester City,GK,goalkeeper,188,0,0,0,8,6,45
